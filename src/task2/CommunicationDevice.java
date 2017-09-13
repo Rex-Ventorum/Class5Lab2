@@ -1,9 +1,9 @@
 
 package task2;
 
-public abstract class CommunicatonDevice {
+public abstract class CommunicationDevice {
     private boolean isConnected;
-    private CommunicatonDevice otherDivice;
+    private CommunicationDevice otherDivice;
     
      public abstract void sendMessage(byte[] outgoingMsg);
      public abstract void reiceveMessage(byte[] incomingMsg);
@@ -13,7 +13,7 @@ public abstract class CommunicatonDevice {
     //----------------------//
     
     public boolean isConnected(){return isConnected;}
-    public CommunicationDivice getOtherDivice(){return otherDivice;}
+    public CommunicationDevice getOtherDivice(){return otherDivice;}
     
     //----------------------//
     //--- Setter Methods ---//
@@ -21,7 +21,7 @@ public abstract class CommunicatonDevice {
     
     public void setConnected(boolean isConnected){this.isConnected = isConnected;}
     
-    public void setOtherDivice(CommunicationDivice otherDivice){
+    public void setOtherDivice(CommunicationDevice otherDivice){
         if(otherDivice == null) throw new IllegalArgumentException("otherDivice may not be null");
         this.otherDivice = otherDivice;
         isConnected = true;
