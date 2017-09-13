@@ -6,7 +6,7 @@ public abstract class CommunicationDevice {
     private CommunicationDevice otherDivice;
     
      public abstract void sendMessage(byte[] outgoingMsg);
-     public abstract void reiceveMessage(byte[] incomingMsg);
+     public abstract void recieveMessage(byte[] incomingMsg);
      
     //----------------------//
     //--- Getter Methods ---//

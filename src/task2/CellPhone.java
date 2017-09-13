@@ -1,5 +1,5 @@
 
-package task1;
+package task2;
 
 import java.util.LinkedList;
 
@@ -12,6 +12,23 @@ public class CellPhone extends Phone{
         installedApps = new LinkedList<>();
     }
     
+    //----------------------//
+    //- Inhearted Methods --//
+    //----------------------//
+    
+    @Override
+    public void sendMessage(byte[] outgoingMsg) {
+        if(isConnected() == false) throw new IllegalArgumentException("Connection has not been established");
+        CommunicationDevice otherDivice = getOtherDivice();
+        otherDivice.recieveMessage(outgoingMsg);
+    }
+
+    @Override
+    public void recieveMessage(byte[] incomingMsg) {
+        if(incomingMsg == null) throw new IllegalArgumentException("Cannote Recieve a Null Message");
+        //TODO: Do something with incomingMsg
+    }
+
     //----------------------//
     //--- Getter Methods ---//
     //----------------------//
@@ -29,7 +46,7 @@ public class CellPhone extends Phone{
     }
     
     //----------------------//
-    //---- Other Methods ---//
+    //--- Other Methods ----//
     //----------------------//
     public void installApp(CellPhoneApp newApp){
         if(newApp == null) throw new IllegalArgumentException("App May Not Be Null");
@@ -37,7 +54,7 @@ public class CellPhone extends Phone{
         installedApps.add(newApp);
     }
     
-    public void removeApp(CellPhoneApp deleteApp){
+    public void removeApp(task1.CellPhoneApp deleteApp){
         installedApps.remove(deleteApp);
     }
 }
