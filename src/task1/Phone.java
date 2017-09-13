@@ -1,7 +1,7 @@
 
 package task1;
 
-public class Phone extends CommunicationDivice{
+public class Phone extends CommunicationDevice{
     private String phoneNumber;
     
     public Phone(String phoneNumber){

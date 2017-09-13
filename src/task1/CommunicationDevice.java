@@ -1,9 +1,9 @@
 package task1;
 
-public class CommunicationDivice {
+public class CommunicationDevice {
     
     private boolean isConnected;
-    private CommunicationDivice otherDivice;
+    private CommunicationDevice otherDivice;
 
     public void sendMessage(byte[] outgoingMsg){
         if(isConnected == false) throw new IllegalArgumentException("Connection has not been established");
@@ -20,7 +20,7 @@ public class CommunicationDivice {
     //----------------------//
     
     public boolean isConnected(){return isConnected;}
-    public CommunicationDivice getOtherDivice(){return otherDivice;}
+    public CommunicationDevice getOtherDivice(){return otherDivice;}
     
     //----------------------//
     //--- Setter Methods ---//
@@ -28,7 +28,7 @@ public class CommunicationDivice {
     
     public void setConnected(boolean isConnected){this.isConnected = isConnected;}
     
-    public void setOtherDivice(CommunicationDivice otherDivice){
+    public void setOtherDivice(CommunicationDevice otherDivice){
         if(otherDivice == null) throw new IllegalArgumentException("otherDivice may not be null");
         this.otherDivice = otherDivice;
         isConnected = true;
