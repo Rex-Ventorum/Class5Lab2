@@ -2,7 +2,7 @@
 package task1;
 
 public class Phone extends CommunicationDivice{
-    String phoneNumber;
+    private String phoneNumber;
     
     public Phone(String phoneNumber){
         setPhoneNumber(phoneNumber);
@@ -19,4 +19,5 @@ public class Phone extends CommunicationDivice{
         return testNumber != null &&
                testNumber.matches("\\d{7-15}");
     }
+
 }

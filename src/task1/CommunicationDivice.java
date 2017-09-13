@@ -4,19 +4,14 @@ public class CommunicationDivice {
     
     private boolean isConnected;
     private CommunicationDivice otherDivice;
-    
-    /**
-        @param outgoingMsg can be anything (null Included)
-        The otherDivice should validate if the message type is acceptable
-    */
 
-    public void sendMessage(Object outgoingMsg){
+    public void sendMessage(byte[] outgoingMsg){
         if(isConnected == false) throw new IllegalArgumentException("Connection has not been established");
         otherDivice.recieveMessage(outgoingMsg);
     }
     
-    public void recieveMessage(Object incomingMsg){
-        if(messageCanBeReiceved(incomingMsg) == false) throw new IllegalArgumentException("Unable to recieve message");
+    public void recieveMessage(byte[] incomingMsg){
+        if(incomingMsg == null) throw new IllegalArgumentException("Cannote Recieve a Null Message");
         //TODO: Do something with incomingMsg
     }
     
@@ -38,12 +33,5 @@ public class CommunicationDivice {
         this.otherDivice = otherDivice;
         isConnected = true;
     }
-    
-    //--------------------------//
-    //--- Validation Helpers ---//
-    //--------------------------//
-    
-    private boolean messageCanBeReiceved(Object testMsg){
-        return true;
-    }
+   
 }
